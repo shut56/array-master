@@ -1,0 +1,49 @@
+h1 {
+  text-align: center;
+}
+
+.main-header {
+  color: blue;
+}
+
+#header {
+  border: 1px solid black;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.child-1 {
+  background-color: green;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
+}
+
+.child-2 {
+  background-color: yellow;
+  min-width: fit-content;
+  flex-grow: 1;
+}
+
+.active:hover {
+  background-color: red;
+}
+
+#square {
+  height: 100px;
+}
+
+p {
+  background-color: cyan;
+}
+
+.friend {
+  color: #df2134;
+}
