@@ -1,3 +1,3 @@
 # This is My first project
 
-Oh, this is arrays! Wow!
+Oh, this is arrays!
