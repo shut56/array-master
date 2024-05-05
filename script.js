@@ -103,13 +103,19 @@ friendOrderedList.id = 'friend-list';
 
 friendsBlock.append(friendOrderedList);
 
-friends.forEach((friend) => {
-  const friendElement = document.createElement('li');
-  friendElement.textContent = friend.name;
-  friendElement.className = 'friend';
+function renderFriendList(friends) {
+  friendOrderedList.textContent = '';
 
-  friendOrderedList.append(friendElement);
-});
+  friends.forEach((friend) => {
+    const friendElement = document.createElement('li');
+    friendElement.textContent = friend.id;
+    friendElement.className = 'friend';
+
+    friendOrderedList.append(friendElement);
+  });
+}
+
+renderFriendList(friends);
 
 const addFriendButton = document.createElement('button');
 addFriendButton.type = 'submit';
@@ -131,13 +137,21 @@ function onSubmitHandler(e) {
 
   const name = friendNameInput.value;
 
-  const friendElement = document.createElement('li');
-  friendElement.textContent = name;
-  friendElement.className = 'friend';
+  // const friendElement = document.createElement('li');
+  const someValue = `${name.toLowerCase()}-${friends.length}`;
+  // friendElement.textContent = someValue;
+  // friendElement.className = 'friend';
 
-  friendOrderedList.append(friendElement);
+  friends.push({
+    id: someValue,
+    name,
+  });
+
+  // friendOrderedList.append(friendElement);
 
   friendNameInput.value = '';
+
+  renderFriendList(friends);
 }
 
 friendForm.addEventListener('submit', onSubmitHandler);
